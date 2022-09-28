@@ -1,5 +1,5 @@
 
-![Logo](https://geocachen.nl/wp-content/uploads/2017/04/GeoGuessr-FB.png)
+![Logo](https://upload.wikimedia.org/wikipedia/commons/3/3f/GeoGuessr_logo.svg)
 
 
 
