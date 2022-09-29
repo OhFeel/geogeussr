@@ -44,8 +44,7 @@ webbrowser.open('https://www.geoguessr.com/maps/623b4eed21380468d68ca6e6')
 class geoguessr:
 
   def __init__(self):
-        self.x = 0
-        self.y = 0
+        self.delay = 1.5
 
 
   def get_positions(self):
@@ -54,7 +53,7 @@ class geoguessr:
       if keyboard.is_pressed("X"):
         self.pos_play = pyautogui.position()
         pyautogui.click()
-        time.sleep(.5)
+        time.sleep(1)
         break
     self.print_console("Move your mouse to 'start' and press 'X'")    
     while True:
@@ -85,36 +84,36 @@ class geoguessr:
         time.sleep(.5)
         break
     self.print_console("Now wait till it says 'view summary' and press 'X'")
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_map)
     pyautogui.click()
     pyautogui.moveTo(self.pos_geuss)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_next)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_map)
     pyautogui.click()
     pyautogui.moveTo(self.pos_geuss)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_next)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_map)
     pyautogui.click()
     pyautogui.moveTo(self.pos_geuss)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_next)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     pyautogui.moveTo(self.pos_map)
     pyautogui.click()
     pyautogui.moveTo(self.pos_geuss)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(self.delay)
     while True:
       if keyboard.is_pressed("X"):
         self.pos_sum = pyautogui.position()
@@ -134,64 +133,75 @@ class geoguessr:
   def run(self):
     
     for x in range(num2): 
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_play)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_start)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_map)
       pyautogui.click()
       pyautogui.moveTo(self.pos_geuss)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_next)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_map)
       pyautogui.click()
       pyautogui.moveTo(self.pos_geuss)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_next)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_map)
       pyautogui.click()
       pyautogui.moveTo(self.pos_geuss)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_next)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_map)
       pyautogui.click()
       pyautogui.moveTo(self.pos_geuss)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_next)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_map)
       pyautogui.click()
       pyautogui.moveTo(self.pos_geuss)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_sum)
       pyautogui.click()
-      time.sleep(1.5)
+      time.sleep(self.delay)
       pyautogui.moveTo(self.pos_again)
       pyautogui.click()
     
 
 
-  
+  def fast_slow(self):
+    self.print_console("Do you have fast or slow internet?")
+    self.print_console("option: 1 = slow 2 = fast 3 = superslow")
+    num_fast_slow = int(input())
+    if num_fast_slow == 1:
+      self.delay = 5
+    if num_fast_slow == 3:
+      self.delay = 7.5  
+
+
 
   def print_console(self, arg, status = "Console"):
         print(f"{Fore.WHITE}[{Fore.RED}{status}{Fore.WHITE}] {arg}")
   def main(self):
-    os.system(f"title" + " Geoguessr Bot // @ohfeel on github // v 1.0")
+    
+    os.system(f"title" + " Geoguessr Bot // @ohfeel on github // v 1.1")
+    geoguessr.fast_slow(self)
     geoguessr.get_positions(self)
     geoguessr.run(self)
     
