@@ -12,7 +12,7 @@ Use at your own risk!
 
 ## 🚀How to launch
 
-Download from [here](https://github.com/OhFeel/geogeussr/releases/tag/geo_geussr)
+Download from [here](https://github.com/OhFeel/geogeussr-bot/releases/tag/v1.2)
 
 
 
