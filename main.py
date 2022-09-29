@@ -54,30 +54,35 @@ class geoguessr:
       if keyboard.is_pressed("X"):
         self.pos_play = pyautogui.position()
         pyautogui.click()
+        time.sleep(.5)
         break
     self.print_console("Move your mouse to 'start' and press 'X'")    
     while True:
       if keyboard.is_pressed("X"):
         self.pos_start = pyautogui.position()
         pyautogui.click()
+        time.sleep(.5)
         break
     self.print_console("Move your mouse to 'the map' and press 'X'")
     while True:
       if keyboard.is_pressed("X"):
         self.pos_map = pyautogui.position()
         pyautogui.click()
+        time.sleep(.5)
         break
     self.print_console("Move your mouse to 'geuss' and press 'X'")
     while True:
       if keyboard.is_pressed("X"):
         self.pos_geuss = pyautogui.position()
         pyautogui.click()
+        time.sleep(.5)
         break
     self.print_console("Move your mouse to 'next round' and press 'X'") 
     while True:
       if keyboard.is_pressed("X"):
         self.pos_next = pyautogui.position()
         pyautogui.click()
+        time.sleep(.5)
         break
     self.print_console("Now wait till it says 'view summary' and press 'X'")
     time.sleep(1.5)
